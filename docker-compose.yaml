@@ -1,4 +1,4 @@
-version: "3"
+version: "3.8"
 services:
   zookeeper:
     image: "bitnami/zookeeper:latest"
@@ -6,6 +6,7 @@ services:
       - "2181:2181"
     environment:
       - ALLOW_ANONYMOUS_LOGIN=yes
+
   kafka:
     image: "bitnami/kafka:latest"
     container_name: "kafka"
