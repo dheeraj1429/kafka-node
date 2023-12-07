@@ -25,9 +25,11 @@ const runProducerTransaction = async function ({ topicId, messages }) {
       topic: topicId,
       messages,
     });
+    // throw new Error("Some error occurred while sending");
     await transaction.commit();
     await producer.disconnect();
   } catch (err) {
+    console.log(err, "some-error");
     await transaction.abort();
     await producer.disconnect();
   }
